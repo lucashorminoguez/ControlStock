@@ -11,20 +11,18 @@
 #define ASC 1
 #define DESC 0
 
-
 typedef struct {
     char descripcion[90];
     int cantidad_sucursal[3];
     int total;
 } articulos_t;
-articulos_t articulos[CANT_ARTICULOS];
 
-
-int agregar_index(char *articulo,int *index);
-void agregar_articulo(int *index, int *sucursal ,int *cantidad);
-void imprimir_fichas();
-void ordenar_por_stock(int orden);
+void cargar_fichas(articulos_t *articulos);
+int agregar_index(char *articulo,int *index, articulos_t *articulos);
+void agregar_articulo(int *index, int *sucursal ,int *cantidad, articulos_t *articulos);
+void imprimir_fichas(articulos_t *articulos);
+void ordenar_por_stock(int orden, articulos_t *articulos);
 void intercambiar_articulos(articulos_t *a, articulos_t *b);
-//char buscar_por_index(int *index);
+
 
 #endif
